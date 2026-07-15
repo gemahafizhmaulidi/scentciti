@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore the Scent Citi digital fragrance catalogue.">
+  <title>Fragrance Catalogue — Scent Citi Indonesia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="catalog.css">
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="catalog-nav">
+    <a class="catalog-logo" href="../index.html" aria-label="Scent Citi company website">
+      <img src="../assets/scent-citi-logo-transparent.png" alt="Scent Citi Indonesia">
+    </a>
+    <form class="catalog-nav-search" data-search-form>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m16.5 16.5 4 4"></path></svg>
+      <input id="main-search" type="search" placeholder="Search code, note, accord, application, or character…" autocomplete="off">
+      <button type="submit" aria-label="Search catalogue">Search</button>
+    </form>
+    <div class="catalog-nav-actions">
+      <button class="text-button" data-login>Sign in</button>
+      <button class="board-button" data-open-board>Scent board <span data-board-count>0</span></button>
+    </div>
+  </header>
+
+  <main>
+    <section class="catalog-section section" id="all-fragrances">
+      <div class="catalog-title-row">
+        <div><p class="eyebrow">Scent Citi digital catalogue</p><h2>Explore Fragrances</h2></div>
+        <p><span data-result-count>0</span> fragrances shown</p>
+      </div>
+
+      <div class="catalog-tools">
+        <button class="filter-trigger" data-filter-trigger>Filters <span data-active-filter-count>0</span></button>
+        <div class="active-chips" data-active-chips></div>
+        <label class="sort-control">Sort by
+          <select data-sort>
+            <option value="featured">Featured</option>
+            <option value="newest">Newest</option>
+            <option value="name">Name A–Z</option>
+            <option value="code">Product code</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="catalog-layout">
+        <aside class="filter-panel" data-filter-panel>
+          <div class="filter-panel-head"><h3>Refine</h3><button data-clear-filters>Clear all</button><button class="filter-close" data-filter-close aria-label="Close filters">×</button></div>
+          <div class="filter-group">
+            <button class="filter-group-title" aria-expanded="true">Application <span>−</span></button>
+            <div class="filter-options">
+              <label><input type="checkbox" value="Fine Fragrance" data-filter="application"><span>Fine Fragrance</span><b>286</b></label>
+              <label><input type="checkbox" value="Personal Care" data-filter="application"><span>Personal Care</span><b>241</b></label>
+              <label><input type="checkbox" value="Home & Air Care" data-filter="application"><span>Home & Air Care</span><b>198</b></label>
+              <label><input type="checkbox" value="Fabric & Laundry" data-filter="application"><span>Fabric & Laundry</span><b>175</b></label>
+            </div>
+          </div>
+          <div class="filter-group">
+            <button class="filter-group-title" aria-expanded="true">Olfactive family <span>−</span></button>
+            <div class="filter-options two-column">
+              <label><input type="checkbox" value="Floral" data-filter="family"><span>Floral</span></label>
+              <label><input type="checkbox" value="Woody" data-filter="family"><span>Woody</span></label>
+              <label><input type="checkbox" value="Fresh" data-filter="family"><span>Fresh</span></label>
+              <label><input type="checkbox" value="Amber" data-filter="family"><span>Amber</span></label>
+              <label><input type="checkbox" value="Fruity" data-filter="family"><span>Fruity</span></label>
+              <label><input type="checkbox" value="Gourmand" data-filter="family"><span>Gourmand</span></label>
+              <label><input type="checkbox" value="Citrus" data-filter="family"><span>Citrus</span></label>
+              <label><input type="checkbox" value="Musk" data-filter="family"><span>Musk</span></label>
+            </div>
+          </div>
+          <div class="filter-group">
+            <button class="filter-group-title" aria-expanded="true">Availability <span>−</span></button>
+            <div class="filter-options">
+              <label><input type="checkbox" value="Ready stock" data-filter="availability"><span>Ready stock Indonesia</span></label>
+              <label><input type="checkbox" value="Sample available" data-filter="availability"><span>Sample available</span></label>
+              <label><input type="checkbox" value="By import" data-filter="availability"><span>Available by import</span></label>
+            </div>
+          </div>
+          <div class="filter-group">
+            <button class="filter-group-title" aria-expanded="true">Character <span>−</span></button>
+            <div class="filter-options two-column">
+              <label><input type="checkbox" value="Elegant" data-filter="mood"><span>Elegant</span></label>
+              <label><input type="checkbox" value="Comforting" data-filter="mood"><span>Comforting</span></label>
+              <label><input type="checkbox" value="Bold" data-filter="mood"><span>Bold</span></label>
+              <label><input type="checkbox" value="Clean" data-filter="mood"><span>Clean</span></label>
+            </div>
+          </div>
+          <button class="apply-mobile" data-filter-close>Show fragrances</button>
+        </aside>
+
+        <div class="results-area">
+          <div class="product-grid" data-product-grid></div>
+          <div class="empty-state" data-empty hidden><h3>No fragrance found.</h3><p>Try removing a filter or searching a broader scent direction.</p><button data-clear-filters>Clear filters</button></div>
+          <button class="load-more" data-load-more>Load more fragrances <span>↓</span></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="guided section">
+      <div class="guided-image"><img src="https://images.unsplash.com/photo-1748261348346-9ef0f83b9ab3?auto=format&amp;fit=crop&amp;w=1700&amp;q=88" alt="Specialist working in a laboratory" loading="lazy"></div>
+      <div class="guided-copy"><p class="eyebrow">Not sure where to begin?</p><h2>Build a better<br><em>fragrance brief.</em></h2><p>Tell us the product, audience, feeling and commercial direction. Our team can help turn it into a focused sample selection.</p><button data-consult>Start a guided request <span>↗</span></button></div>
+    </section>
+  </main>
+
+  <footer class="catalog-footer">
+    <img src="../assets/scent-citi-logo-transparent.png" alt="Scent Citi Indonesia">
+    <div><p>Digital fragrance catalogue</p><a href="../index.html">Visit company website ↗</a><span>© 2026 Scent Citi Indonesia</span></div>
+  </footer>
+
+  <div class="overlay" data-overlay></div>
+
+  <aside class="product-drawer" data-product-drawer aria-hidden="true">
+    <button class="drawer-close" data-close-drawer aria-label="Close product details">×</button>
+    <div data-product-detail></div>
+  </aside>
+
+  <aside class="board-drawer" data-board-drawer aria-hidden="true">
+    <div class="board-head"><div><p class="eyebrow">Your shortlist</p><h2>Scent board</h2></div><button data-close-board aria-label="Close scent board">×</button></div>
+    <div class="board-items" data-board-items></div>
+    <div class="board-empty" data-board-empty><p>Your scent board is empty.</p><span>Save fragrances to compare or request samples together.</span></div>
+    <div class="board-footer"><p><span data-board-count>0</span> selected fragrances</p><button data-request-board>Request samples <span>↗</span></button></div>
+  </aside>
+
+  <dialog class="request-modal" data-request-modal>
+    <button class="modal-close" data-close-modal aria-label="Close request form">×</button>
+    <p class="eyebrow">Scent Citi · Business request</p>
+    <h2 data-modal-title>Request samples</h2>
+    <p class="modal-intro">Leave your business details and our team will continue the conversation with the selected fragrance context attached.</p>
+    <form data-request-form>
+      <label>Company name<input required name="company" placeholder="PT / CV / brand name"></label>
+      <div class="form-row"><label>Contact person<input required name="name" placeholder="Full name"></label><label>WhatsApp<input required name="phone" placeholder="+62"></label></div>
+      <label>Product application<select required name="application"><option value="">Select application</option><option>Fine Fragrance</option><option>Personal Care</option><option>Home & Air Care</option><option>Fabric & Laundry</option></select></label>
+      <label>Estimated quantity<select name="quantity"><option>Still exploring</option><option>Sample only</option><option>1–5 kg</option><option>6–25 kg</option><option>More than 25 kg</option></select></label>
+      <label>Tell us about the project<textarea name="brief" rows="4" placeholder="Desired character, target customer, timeline, or reference…"></textarea></label>
+      <button type="submit">Submit request <span>↗</span></button>
+    </form>
+  </dialog>
+
+  <dialog class="login-modal" data-login-modal>
+    <button class="modal-close" data-close-login aria-label="Close sign in">×</button>
+    <p class="eyebrow">Client access</p><h2>Welcome back.</h2><p class="modal-intro">Sign in to access saved scents, customer pricing, approved fragrances and recent requests.</p>
+    <form data-login-form><label>Business email<input required type="email" placeholder="name@company.com"></label><label>Password<input required type="password" placeholder="••••••••"></label><button type="submit">Sign in <span>↗</span></button><a href="#">Request business access</a></form>
+  </dialog>
+
+  <div class="toast" data-toast role="status"></div>
+  <script src="catalog.js"></script>
+</body>
+</html>
