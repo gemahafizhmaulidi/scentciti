@@ -12,7 +12,7 @@ pm2 save
 pm2 startup
 ```
 
-Website berjalan di port `3000`:
+Website berjalan di port `3215`:
 
 - `/` → company profile
 - `/catalog/` → fragrance catalogue
@@ -29,6 +29,6 @@ pm2 restart scentciti-web
 
 ## Reverse proxy
 
-Arahkan domain dari Nginx atau control panel hosting ke `http://127.0.0.1:3000`. SSL sebaiknya ditangani oleh Nginx/Cloudflare, bukan PM2.
+Arahkan domain dari Nginx atau control panel hosting ke `http://127.0.0.1:3215`. SSL sebaiknya ditangani oleh Nginx/Cloudflare, bukan PM2.
 
 Jangan mengaktifkan SPA fallback. Landing page dan katalog memakai dua file HTML berbeda, sehingga `/catalog/` perlu membaca `catalog/index.html` secara langsung.
